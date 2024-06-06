@@ -27,4 +27,7 @@ class Jogo_da_forca:
     def is_won(self):
         return all(letter in self.guesses for letter in self.word)
 
+    def is_lost(self):
+        return self.attempts_left <= 0
 
+ 
