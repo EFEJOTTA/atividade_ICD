@@ -24,4 +24,7 @@ class Jogo_da_forca:
         else:
             print("Correto!")
 
+    def is_won(self):
+        return all(letter in self.guesses for letter in self.word)
+
 
