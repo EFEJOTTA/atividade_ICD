@@ -30,4 +30,13 @@ class Jogo_da_forca:
     def is_lost(self):
         return self.attempts_left <= 0
 
- 
+    def play(self):
+        while not self.is_won() and not self.is_lost():
+            self.display_word()
+            guess = utils.get_user_guess()
+            self.make_guess(guess)
+        
+        if self.is_won():
+            print(f"Parabéns! Você acertou a palavra! A palavra era '{self.word}'.")
+        else:
+            print(f"Você errou a palavra! A palavra era '{self.word}'.")
